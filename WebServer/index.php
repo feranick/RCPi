@@ -1,23 +1,25 @@
 <?php
 $status = $_POST['status'];
-
-//$command = "sudo python3 piRC_manual.cpython-34.pyc $status 2>&1";y
 $command = "./RCPi.py $status 2>&1";
 $output = shell_exec($command);
-
-print "
+?>
 <html>
-<title> RCPico - no file version</title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="stylesheet" type="text/css" href="rcpi.css" media="screen" />
+        <!-- Choose a 57x57 image for the icon -->
+        <link rel="apple-touch-icon" href="rcpi_icon.png" />
+    </head>
 <body>
-<h2>Requesting: $status</h2>
-<h3>Result: $output</h3>
-<script>
-console.log('PHP-input:" .$status. "');
-console.log('PHP-output:" .$output. "');
-</script>
+
+<title>RCPi</title>
+<form action = "index.php" method = "POST">
+<input type = "submit" name ="status" id="Submit" value = "OPEN">
+<br><input type = "submit" name ="status" id="Submit" value = "CLOSE">
+</form>
+<txt><pre><?php echo $output; ?></pre></txt>
 </body>
 </html>
-";
 
-include('buttons.html');
-?>
