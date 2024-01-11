@@ -12,3 +12,5 @@ You may be able to speed up launching the python script by compiling it first:
 python3 -m compileall ./
 
 In this case, you need to change the proper line in the index.php file.
+
+Web versions require apache2, php, libapache2-mod-php
