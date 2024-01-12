@@ -27,7 +27,7 @@ def runControls():
     GPIO.output(26, True)
     time.sleep(1)
     GPIO.output(26, False)
-    time.sleep(1)
+    time.sleep(3)
     GPIO.cleanup()
 #************************************
 ''' RunManualControls '''
